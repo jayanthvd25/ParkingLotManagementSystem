@@ -1,47 +1,24 @@
-#include<bits/stdc++.h>
-using namespace std;
-
-class Vehicle {
-    string ownerName;
-    string vehicleNumber;
-    string vehicleType;
-    string entryTime;
-    string vehicleID;
-
-    public:
-
-    Vehicle(string ownerName,string vehicleNumber,string vehicleType,string entryTime,string vehicleID):ownerName(ownerName),vehicleNumber(vehicleNumber),vehicleType(vehicleType),entryTime(entryTime),vehicleID(vehicleID) {
-    }
-
-    Vehicle(string ownerName, string vehicleNumber)
-        : ownerName(ownerName),vehicleNumber(vehicleNumber),vehicleType("Unknown"),entryTime("Unknown"),
-        vehicleID("Unknown") {
-    }
-
-    Vehicle(const Vehicle& other): ownerName(other.ownerName), vehicleNumber(other.vehicleNumber), vehicleType(other.vehicleType),entryTime(other.entryTime), vehicleID(other.vehicleID) {
-    }
-
-    void displayVehicleDetails(){
-        cout<<"Owner Name: "<<ownerName<<endl;
-        cout<<"Vehicle Number: "<<vehicleNumber<<endl;
-        cout<<"Vehicle Type: "<<vehicleType<<endl;
-        cout<<"Entry Time: "<<entryTime<<endl;
-        cout<<"Vehicle ID: "<<vehicleID<<endl;
-    }
-};
-
+#include "../include/Vehicle.h"
 
 int main() {
 
     Vehicle v1("Jayanth", "KA06AB1234", "Car", "10:00 AM", "V101");
 
-    Vehicle v2("Rahul", "KA06CD5678", "Bike", "10:30 AM", "V102");
+    Vehicle v2("Rahul", "KA06CD5678");
 
-    Vehicle v3("Sita", "KA06EF9012");
+    Vehicle v3 = v1;
 
+    cout << "\n--- Vehicle 1 ---\n";
     v1.displayVehicleDetails();
+
+    cout << "\n--- Vehicle 2 ---\n";
     v2.displayVehicleDetails();
+
+    cout << "\n--- Vehicle 3 (Copied) ---\n";
     v3.displayVehicleDetails();
+
+    cout << "\nVehicle Number: " << v1.getVehicleNumber();
+    cout << "\nVehicle Type: " << v1.getVehicleType() << endl;
 
     return 0;
 }
