@@ -35,3 +35,7 @@ string Vehicle::getVehicleNumber() const{
 string Vehicle::getVehicleType() const{
     return vehicleType;
 }
+
+string Vehicle::getVehicleType() const{
+    return vehicleType;
+}
